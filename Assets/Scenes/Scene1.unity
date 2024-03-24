@@ -1046,8 +1046,8 @@ GameObject:
   - component: {fileID: 447722536}
   - component: {fileID: 447722535}
   - component: {fileID: 447722534}
-  m_Layer: 0
-  m_Name: Cube (1)
+  m_Layer: 6
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,8 +1388,8 @@ GameObject:
   - component: {fileID: 700225640}
   - component: {fileID: 700225639}
   - component: {fileID: 700225638}
-  m_Layer: 0
-  m_Name: Cube
+  m_Layer: 6
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1748,7 +1748,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.041558646, y: -1e-45, z: 0, w: 0.9991361}
+  m_LocalRotation: {x: 0.041558646, y: 1e-45, z: 0, w: 0.9991361}
   m_LocalPosition: {x: 0, y: 4, z: -393.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1801,8 +1801,8 @@ GameObject:
   - component: {fileID: 1040556073}
   - component: {fileID: 1040556072}
   - component: {fileID: 1040556071}
-  m_Layer: 0
-  m_Name: Cube (1)
+  m_Layer: 6
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2889,7 +2889,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461797687}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.041558646, y: -1e-45, z: -0, w: 0.9991361}
+  m_LocalRotation: {x: 0.041558646, y: 1e-45, z: 0, w: 0.9991361}
   m_LocalPosition: {x: 0, y: 4, z: -393.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3069,8 +3069,8 @@ GameObject:
   - component: {fileID: 1732648297}
   - component: {fileID: 1732648296}
   - component: {fileID: 1732648295}
-  m_Layer: 0
-  m_Name: Cube
+  m_Layer: 6
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4696,6 +4696,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: {fileID: 1087892469}
+  _borderMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _checkingDistance: 5
+  _maxCheckingTime: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
