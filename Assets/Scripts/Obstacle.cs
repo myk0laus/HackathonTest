@@ -10,7 +10,6 @@ public class Obstacle : MonoBehaviour
     public event Action Triggered;
     public event Action<Obstacle> TriggeredObstacle; 
 
-
     private void OnEnable()
     {
         Triggered += OnTriggered;

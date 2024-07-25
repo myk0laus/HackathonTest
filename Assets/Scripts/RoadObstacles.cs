@@ -7,7 +7,7 @@ public class RoadObstacles : MonoBehaviour
     [SerializeField] private List<Obstacle> _obstacles = new List<Obstacle>();
     [SerializeField] private float _minPosX, _maxPosX, _posY;
 
-    private float _minOffsetZ = 250, _maxOffsetZ = 500;
+    [SerializeField] private float _minOffsetZ = 250, _maxOffsetZ = 500;
     private float _delay = 0.3f;
     private Obstacle _triggeredObstacle; 
 

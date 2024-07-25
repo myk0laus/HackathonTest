@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour
 
     private void OnPlayButtonClicked()
     {
+        Music.Instance.SetGameCLip();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
      

@@ -15,12 +15,17 @@ public class VehicleController : MonoBehaviour
     [SerializeField] private Transform _backRightTransform;
     [SerializeField] private Transform _backLeftTransform;
 
-    private float _currentAcceleration = 0;
-    private float _currentTurnAngle = 0;
+    private float _currentAcceleration = 0f;
+    private float _currentTurnAngle = 0f;
+    [SerializeField] private float _turnStep;
 
+    private bool _leftTurn;
+    private bool _rightTurn;
+    private bool _noTurn;
 
     private void Update()
     {
+        Debug.Log(_currentTurnAngle);
         CheckInput();
     }
 
@@ -34,20 +39,35 @@ public class VehicleController : MonoBehaviour
     {
         _currentAcceleration = _acceleration;
 
-        _currentTurnAngle = Input.GetAxis("Horizontal") * _maxTurnAngle;
+        //_currentTurnAngle = Input.GetAxis("Horizontal") * _maxTurnAngle;
 
-        foreach (Touch touch in Input.touches)
-        {
-            if (touch.position.x < Screen.width / 2)
-            {
-                _currentTurnAngle = -1 * _maxTurnAngle;
-            }
-            else if (touch.position.x > Screen.width / 2)
-            {
-                _currentTurnAngle = 1 * _maxTurnAngle;
-            }
-        }
+        if (_leftTurn && _currentTurnAngle > -_maxTurnAngle)
+            _currentTurnAngle -= _turnStep * Time.deltaTime;
+        if (_rightTurn && _currentTurnAngle < _maxTurnAngle)
+            _currentTurnAngle += _turnStep * Time.deltaTime;
+        if (_noTurn)
+            _currentTurnAngle = 0;
+    }
 
+    public void OnTurnLeftButtonPressed()
+    {
+        _noTurn = false;
+        _rightTurn = false;
+        _leftTurn = true;
+    }
+
+    public void OnTurnRightButtonPressed()
+    {
+        _noTurn = false;
+        _rightTurn = true;
+        _leftTurn = false;
+    }
+
+    public void OnTurnButtonReleased()
+    {
+        _noTurn = true;
+        _rightTurn = false;
+        _leftTurn = false;
     }
 
     private void DriveVehicle()
