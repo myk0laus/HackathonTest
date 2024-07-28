@@ -13,7 +13,7 @@ public class RoadObstacles : MonoBehaviour
 
     private void OnEnable()
     {
-        foreach (var obstacle in _obstacles)
+        foreach (Obstacle obstacle in _obstacles)
         {
             obstacle.TriggeredObstacle += MarkTriggeredObstacles;
         }    
@@ -21,7 +21,7 @@ public class RoadObstacles : MonoBehaviour
 
     private void OnDisable()
     {
-        foreach (var obstacle in _obstacles)
+        foreach (Obstacle obstacle in _obstacles)
         {
             obstacle.TriggeredObstacle -= MarkTriggeredObstacles;
         }

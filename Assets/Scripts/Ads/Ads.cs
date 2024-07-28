@@ -7,6 +7,8 @@ public class Ads : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
     [SerializeField] Button _showAdButton;
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
     [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
+    [SerializeField] private CarReviver _carRevive;
+    [SerializeField] private LosePanel _losePanel;
     string _adUnitId = null; // This will remain null for unsupported platforms
 
     void Awake()
@@ -60,6 +62,7 @@ public class Ads : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
+            _carRevive.ReviveProcess();
         }
     }
 

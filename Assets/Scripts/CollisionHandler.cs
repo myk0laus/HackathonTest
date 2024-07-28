@@ -8,12 +8,12 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] private float _checkingDistance;
     [SerializeField] private float _maxCheckingTime;
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private AudioClip _crashClip; 
+    [SerializeField] private AudioClip _crashClip;
     [SerializeField] private AudioClip _collectObstacleClip;
     private float _currentCheckingTime;
 
     public event Action Dead;
-     
+
     private void Start()
     {
         _currentCheckingTime = _maxCheckingTime;
@@ -38,11 +38,13 @@ public class CollisionHandler : MonoBehaviour
         if (collision.collider.GetComponent<RoadPart>())
         {
             Dead?.Invoke();
+            Debug.Log("Dead invoked");
         }
         if (collision.collider.GetComponent<Obstacle>())
         {
             _audioSource.PlayOneShot(_crashClip);
             Dead?.Invoke();
+            Debug.Log("Dead invoked");
         }
     }
 
@@ -53,7 +55,11 @@ public class CollisionHandler : MonoBehaviour
             Debug.Log("I see border");
             _currentCheckingTime -= Time.deltaTime;
             if (_currentCheckingTime <= 0)
+            {
                 Dead?.Invoke();
+                Debug.Log("Dead invoked");
+            }
+
         }
         else
         {

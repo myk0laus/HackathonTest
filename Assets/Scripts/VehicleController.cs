@@ -25,7 +25,7 @@ public class VehicleController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_currentTurnAngle);
+        _currentAcceleration = _acceleration;
         CheckInput();
     }
 
@@ -37,8 +37,6 @@ public class VehicleController : MonoBehaviour
 
     private void CheckInput()
     {
-        _currentAcceleration = _acceleration;
-
         //_currentTurnAngle = Input.GetAxis("Horizontal") * _maxTurnAngle;
 
         if (_leftTurn && _currentTurnAngle > -_maxTurnAngle)

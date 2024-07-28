@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3481471579325787507}
   - component: {fileID: 3212717072943882778}
   - component: {fileID: 5592690022863628868}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
