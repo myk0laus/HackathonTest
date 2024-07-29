@@ -8424,6 +8424,7 @@ GameObject:
   - component: {fileID: 1881889908}
   - component: {fileID: 1881889907}
   - component: {fileID: 1881889906}
+  - component: {fileID: 1881889909}
   m_Layer: 0
   m_Name: Ads
   m_TagString: Untagged
@@ -8446,7 +8447,7 @@ MonoBehaviour:
   _androidGameId: 5663279
   _iOSGameId: 5663278
   _testMode: 1
-  Ads: {fileID: 1881889907}
+  RewardedAds: {fileID: 1881889907}
 --- !u!114 &1881889907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8479,6 +8480,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1881889909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881889905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717d860d4070db141a8319cfa65a1abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bannerPosition: 4
+  _androidAdUnitId: Banner_Android
+  _iOSAdUnitId: Banner_iOS
 --- !u!1 &1905666629
 GameObject:
   m_ObjectHideFlags: 0
@@ -13235,6 +13251,10 @@ PrefabInstance:
       value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 339299746310297828, guid: d945936ff5c6416438dcc28b0c6811cb, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 339299746310297828, guid: d945936ff5c6416438dcc28b0c6811cb, type: 3}
       propertyPath: m_InnerSpotAngle
       value: 30
       objectReference: {fileID: 0}
@@ -13389,6 +13409,10 @@ PrefabInstance:
     - target: {fileID: 7046863331439512566, guid: d945936ff5c6416438dcc28b0c6811cb, type: 3}
       propertyPath: m_SpotAngle
       value: 83
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046863331439512566, guid: d945936ff5c6416438dcc28b0c6811cb, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7046863331439512566, guid: d945936ff5c6416438dcc28b0c6811cb, type: 3}
       propertyPath: m_InnerSpotAngle
