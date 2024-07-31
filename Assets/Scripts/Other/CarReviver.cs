@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class CarReviver : MonoBehaviour
 {
+    [SerializeField] private Button _rewardedAdButton;
     [SerializeField] private MeshRenderer[] _blinksMeshes;
     [SerializeField] private Collider[] _obstacles;
     [SerializeField] private Collider[] _carColliders;

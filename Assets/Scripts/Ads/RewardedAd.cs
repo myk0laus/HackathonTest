@@ -63,6 +63,7 @@ public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
             _carRevive.ReviveProcess();
+            _showAdButton.interactable= true;
         }
     }
 
