@@ -11,8 +11,16 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] private AudioClip _crashClip;
     [SerializeField] private AudioClip _collectObstacleClip;
     private float _currentCheckingTime;
+    private bool _collided = false;
+
+    public Score Score => _score;
 
     public event Action Dead;
+    public bool Collided
+    {
+        get => _collided;
+        set => _collided = value;
+    }
 
     private void Start()
     {
@@ -35,16 +43,23 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.GetComponent<RoadPart>())
+        if (_collided == false)
         {
-            Dead?.Invoke();
-            Debug.Log("Dead invoked");
-        }
-        if (collision.collider.GetComponent<Obstacle>())
-        {
-            _audioSource.PlayOneShot(_crashClip);
-            Dead?.Invoke();
-            Debug.Log("Dead invoked");
+            if (collision.collider.GetComponent<RoadPart>())
+            {
+                _audioSource.PlayOneShot(_crashClip);
+                Dead?.Invoke();
+                _collided = true;
+                Debug.Log("Dead invoked");
+            }
+            else if (collision.collider.GetComponent<Obstacle>())
+            {
+                _audioSource.PlayOneShot(_crashClip);
+                Dead?.Invoke();
+                _collided = true;
+
+                Debug.Log("Dead invoked");
+            }
         }
     }
 
@@ -59,7 +74,6 @@ public class CollisionHandler : MonoBehaviour
                 Dead?.Invoke();
                 Debug.Log("Dead invoked");
             }
-
         }
         else
         {

@@ -2943,6 +2943,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544168053}
   m_Mesh: {fileID: 4300000, guid: cf29f58dfa6b25a40a6dd556c54d465c, type: 3}
+--- !u!1 &554340057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554340059}
+  - component: {fileID: 554340058}
+  m_Layer: 0
+  m_Name: Analytics
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &554340058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554340057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b279d49febeabe647a220f15cec019fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vehicleCollisionHandler: {fileID: 7937596395109541913}
+  _rewardedAd: {fileID: 562041045}
+--- !u!4 &554340059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554340057}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 577.25256, y: 269.58826, z: 335.69116}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &562041044
 GameObject:
   m_ObjectHideFlags: 0
@@ -6309,6 +6355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a243b8e3d0b12b94e9093e9bc0d09ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rewardedAdButton: {fileID: 0}
   _blinksMeshes:
   - {fileID: 5491044331824713003}
   - {fileID: 5491044331824713002}
@@ -8574,7 +8621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _androidGameId: 5663279
   _iOSGameId: 5663278
-  _testMode: 1
+  _testMode: 0
   RewardedAds: {fileID: 562041045}
 --- !u!4 &1881889908
 Transform:
@@ -13953,3 +14000,4 @@ SceneRoots:
   - {fileID: 611340742}
   - {fileID: 1858394471}
   - {fileID: 1455295609}
+  - {fileID: 554340059}

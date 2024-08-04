@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
+using System;
 
 public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
@@ -11,6 +12,8 @@ public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
     [SerializeField] private LosePanel _losePanel;
     string _adUnitId = null; // This will remain null for unsupported platforms
 
+    public event Action AdWasViewed;
+     
     void Awake()
     {
         // Get the Ad Unit ID for the current platform:
@@ -64,6 +67,7 @@ public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
             // Grant a reward.
             _carRevive.ReviveProcess();
             _showAdButton.interactable= true;
+            AdWasViewed?.Invoke();
         }
     }
 

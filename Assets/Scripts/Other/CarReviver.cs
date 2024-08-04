@@ -50,6 +50,7 @@ public class CarReviver : MonoBehaviour
         ActivateLosePanel();
         EnableObstacleColliders();
         _vehicleCollisionHandler.enabled = true;
+        _vehicleCollisionHandler.Collided = false;
     }
 
     private void DisableLosePanel()
