@@ -19,9 +19,9 @@ public class VehicleController : MonoBehaviour
     private float _currentTurnAngle = 0f;
     [SerializeField] private float _turnStep;
 
-    private bool _leftTurn;
-    private bool _rightTurn;
-    private bool _noTurn;
+    //private bool _leftTurn;
+    //private bool _rightTurn;
+    //private bool _noTurn;
 
     private void Update()
     {
@@ -37,36 +37,37 @@ public class VehicleController : MonoBehaviour
 
     private void CheckInput()
     {
-        //_currentTurnAngle = Input.GetAxis("Horizontal") * _maxTurnAngle;
+        float horizontalInput = Input.GetAxis("Horizontal");
+        _currentTurnAngle = horizontalInput * _maxTurnAngle;
 
-        if (_leftTurn && _currentTurnAngle > -_maxTurnAngle)
-            _currentTurnAngle -= _turnStep * Time.deltaTime;
-        if (_rightTurn && _currentTurnAngle < _maxTurnAngle)
-            _currentTurnAngle += _turnStep * Time.deltaTime;
-        if (_noTurn)
-            _currentTurnAngle = 0;
+        //if (_leftTurn && _currentTurnAngle > -_maxTurnAngle)
+        //    _currentTurnAngle -= _turnStep * Time.deltaTime;
+        //if (_rightTurn && _currentTurnAngle < _maxTurnAngle)
+        //    _currentTurnAngle += _turnStep * Time.deltaTime;
+        //if (_noTurn)
+        //    _currentTurnAngle = 0;
     }
 
-    public void OnTurnLeftButtonPressed()
-    {
-        _noTurn = false;
-        _rightTurn = false;
-        _leftTurn = true;
-    }
+    //public void OnTurnLeftButtonPressed()
+    //{
+    //    _noTurn = false;
+    //    _rightTurn = false;
+    //    _leftTurn = true;
+    //}
 
-    public void OnTurnRightButtonPressed()
-    {
-        _noTurn = false;
-        _rightTurn = true;
-        _leftTurn = false;
-    }
+    //public void OnTurnRightButtonPressed()
+    //{
+    //    _noTurn = false;
+    //    _rightTurn = true;
+    //    _leftTurn = false;
+    //}
 
-    public void OnTurnButtonReleased()
-    {
-        _noTurn = true;
-        _rightTurn = false;
-        _leftTurn = false;
-    }
+    //public void OnTurnButtonReleased()
+    //{
+    //    _noTurn = true;
+    //    _rightTurn = false;
+    //    _leftTurn = false;
+    //}
 
     private void DriveVehicle()
     {

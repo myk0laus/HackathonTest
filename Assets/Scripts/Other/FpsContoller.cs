@@ -8,7 +8,7 @@ public class FpsContoller : MonoBehaviour
     void Awake()
     {
         int fps = Convert.ToInt32(targetFPS);
-        Application.targetFrameRate = fps;
+        //Application.targetFrameRate = fps;
     }
 }
 
